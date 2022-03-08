@@ -9,8 +9,10 @@ const buttonStyle = {
 
 const theme = {
   mainColor: '#FF8450',
+  subColor: '#FFCFB5',
   fontColor: '#5B5555',
   fontGray: '#D3D2D2',
+  backgroundGray: '#F6F6F6',
   borderColor: '#EEEEEE',
   inputBorder: {
     //테두리가 있는 input
