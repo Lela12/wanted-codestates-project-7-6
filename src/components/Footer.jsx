@@ -1,13 +1,18 @@
 import { useContext, useCallback } from 'react';
 import { StepContext, FooterContext } from '../App';
 import styled, { css } from 'styled-components';
+import { TOTAL_STEP } from '../constants/step';
 
 export default function Footer() {
   const { currentStep, setCurrentStep } = useContext(StepContext);
   const { activeNext } = useContext(FooterContext);
   const moveStep = useCallback(
     (value) => {
-      setCurrentStep({ ...currentStep, number: currentStep.number + value });
+      setCurrentStep(({ number }) =>
+        number === TOTAL_STEP - 1
+          ? { ...currentStep, number: -1 }
+          : { ...currentStep, number: currentStep.number + value }
+      );
     },
     [currentStep, setCurrentStep]
   );
@@ -28,7 +33,7 @@ const FooterWrap = styled.footer`
   position: absolute;
   bottom: 0;
   background-color: white;
-  z-index: 100;
+  z-index: 10;
 `;
 const Button = styled.button`
   height: 100%;

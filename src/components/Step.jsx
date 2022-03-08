@@ -3,12 +3,13 @@ import { StepContext } from '../App';
 import Footer from '../components/Footer';
 import styled, { css } from 'styled-components';
 import Header from './Header';
+import { STEPS } from '../constants/step';
 
 export default function Step({ children }) {
   const { currentStep, totalStep } = useContext(StepContext);
-  const { number, stepName, stepTitle } = useMemo(() => currentStep, [currentStep]);
+  const { number } = useMemo(() => currentStep, [currentStep]);
   return (
-    number && (
+    number >= 0 && (
       <StepWrap>
         {/* Header */}
         {!currentStep.hideHeader && <Header title="돌보미 신청하기" prev />}
@@ -16,12 +17,12 @@ export default function Step({ children }) {
           {!currentStep.hideTitle && (
             <>
               <StepProgress>
-                <StepName>{stepName}</StepName>
+                <StepName>{STEPS[number].stepName}</StepName>
                 <StepNumber>
-                  <b>{number}</b> / {totalStep}
+                  <b>{number + 1}</b> / {totalStep}
                 </StepNumber>
               </StepProgress>
-              <StepTitle>{stepTitle}</StepTitle>
+              <StepTitle>{STEPS[number].stepTitle}</StepTitle>
             </>
           )}
           <Content>{children}</Content>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../styles/theme';
 import { timeList, careTimeList } from '../temp/staticData';
 import SelectBox from '../components/SelectBox';
 

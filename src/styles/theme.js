@@ -30,14 +30,14 @@ const theme = {
     //메인 색상 button
     ...buttonStyle,
     backgroundColor: '#FF8450',
-    color: 'white',
+    color: '#fff',
   },
   buttonWhite: {
     //흰색 button
     ...buttonStyle,
     border: 'none',
     color: '#7D7878',
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
   },
   buttonGray: {
     // 회색 button

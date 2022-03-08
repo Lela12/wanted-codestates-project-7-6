@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { ReactComponent as Arrow } from '../assets/arrow_icon.svg';
 import { ReactComponent as Close } from '../assets/close_icon.svg';
 
-function Header({ title, prev, close }) {
+function Header({ title, prev = 0, close = 0, setIsModalOpen }) {
   const { currentStep, setCurrentStep } = useContext(StepContext);
   const prevStep = () => {
     setCurrentStep({ ...currentStep, number: currentStep.number - 1 });
@@ -12,11 +12,11 @@ function Header({ title, prev, close }) {
   return (
     <Container>
       <Item>
-        <ArrowIcon prev={prev} onClick={prevStep} />
+        <ArrowIcon prev={prev ? 1 : 0} onClick={prevStep} />
       </Item>
       <Item>{title}</Item>
       <Item>
-        <CloseIcon close={close} />
+        <CloseIcon close={close ? 1 : 0} onClick={() => setIsModalOpen(false)} />
       </Item>
     </Container>
   );

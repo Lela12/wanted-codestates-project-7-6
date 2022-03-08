@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "polished": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "react-uuid": "^1.0.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "twilio": "^3.75.0",
+    "react-uuid": "^1.0.2"
   },
   "scripts": {
     "prepare": "husky install",
@@ -43,9 +47,10 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
+    "@types/styled-components": "^5.1.24",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.0",
+    "husky": "^7.0.4",
     "lint-staged": "^12.3.5",
     "prettier": "^2.5.1"
   }
