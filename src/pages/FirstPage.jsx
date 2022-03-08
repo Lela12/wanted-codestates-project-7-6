@@ -3,7 +3,7 @@ import { StepContext } from '../App';
 import styled from 'styled-components';
 
 const FirstPage = () => {
-  const { step, setStep } = useContext(StepContext);
+  const { currentStep, setCurrentStep } = useContext(StepContext);
 
   return (
     <Container>
@@ -11,8 +11,8 @@ const FirstPage = () => {
         <SubTitle>어르신 돌보미</SubTitle>
         <Title>케어코디</Title>
       </CardContainer>
-      <ButtonContainer>
-        <LandingButton onClick={() => setStep({ ...step, number: 0 })}>신청하기</LandingButton>
+      <ButtonContainer onClick={() => setCurrentStep({ ...currentStep, number: 0 })}>
+        <LandingButton>신청하기</LandingButton>
       </ButtonContainer>
     </Container>
   );
@@ -65,7 +65,7 @@ const Title = styled.h4`
 `;
 
 const ButtonContainer = styled.button`
-  color: ${({ theme }) => theme.buttonMain};
+  ${({ theme }) => theme.buttonMain};
   display: flex;
   flex-direction: row;
   justify-content: center;
