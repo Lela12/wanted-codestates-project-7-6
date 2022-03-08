@@ -11,20 +11,22 @@ const FirstPage = () => {
         <SubTitle>어르신 돌보미</SubTitle>
         <Title>케어코디</Title>
       </CardContainer>
-      <LandingButton onClick={() => setStep({ ...step, number: 0 })}>신청하기</LandingButton>
+      <ButtonContainer>
+        <LandingButton onClick={() => setStep({ ...step, number: 0 })}>신청하기</LandingButton>
+      </ButtonContainer>
     </Container>
   );
 };
 
 const Container = styled.div`
+  overflow-y: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 768px;
+  max-width: 768px;
+  min-width: 360px;
   height: 100vh;
-  margin: 0 auto;
-  font-weight: 600;
 `;
 
 const CardContainer = styled.div`
@@ -32,27 +34,64 @@ const CardContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 2rem;
-  line-height: 1rem;
 `;
 
-const SubTitle = styled.h1`
-  font-size: 3rem;
+const SubTitle = styled.h5`
+  width: 210px;
+  height: 52px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 52px;
+  text-align: center;
   color: ${({ theme }) => theme.fontColor};
 `;
 
-const Title = styled.h2`
+const Title = styled.h4`
+  width: 130px;
+  height: 52px;
+  margin: 0;
+  top: 52px;
+  left: 33px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 52px;
+  text-align: center;
+  font-style: bold;
   color: ${({ theme }) => theme.buttonMain.backgroundColor};
-  padding-bottom: 40px;
 `;
 
-const LandingButton = styled.button`
+const ButtonContainer = styled.button`
   color: ${({ theme }) => theme.buttonMain};
-  width: 220px;
-  height: 60px;
-  border-radius: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 32px 0;
+  width: 184px;
+  height: 56px;
+  top: 136px;
+  border-radius: 40px;
   border: none;
-  font-size: 1rem;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+`;
+
+const LandingButton = styled.span`
+  width: 80px;
+  height: 28px;
+  top: 14px;
+  left: 58.5px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
   cursor: pointer;
 `;
 
